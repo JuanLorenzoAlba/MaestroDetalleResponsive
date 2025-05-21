@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Verde principal -->
+    <color name="primary">#2E7D32</color> <!-- Verde fuerte -->
+    <color name="onPrimary">#FFFFFF</color> <!-- Texto blanco sobre verde -->
+
+    <!-- Contenedor del color primario -->
+    <color name="primaryContainer">#A5D6A7</color> <!-- Verde claro -->
+    <color name="onPrimaryContainer">#1B5E20</color> <!-- Texto oscuro sobre verde claro -->
+
+    <!-- Secundario (puedes usar un verde complementario o un tono diferente) -->
+    <color name="secondary">#66BB6A</color> <!-- Verde medio -->
+    <color name="onSecondary">#000000</color> <!-- Texto oscuro sobre verde medio -->
+
+    <!-- Fondo de pantalla y su texto -->
+    <color name="background">#E8F5E9</color> <!-- Fondo muy claro verdoso -->
+    <color name="onBackground">#1B5E20</color> <!-- Texto oscuro verdoso -->
+
+    <!-- Superficie (tarjetas, app bars, etc.) -->
+    <color name="surface">#FFFFFF</color> <!-- Blanco para contraste -->
+    <color name="onSurface">#1B5E20</color> <!-- Texto verde oscuro -->
 </resources>

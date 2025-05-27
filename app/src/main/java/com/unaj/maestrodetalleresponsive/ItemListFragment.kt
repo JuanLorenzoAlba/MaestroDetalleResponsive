@@ -18,23 +18,8 @@ import com.unaj.maestrodetalleresponsive.placeholder.PlaceholderContent;
 import com.unaj.maestrodetalleresponsive.databinding.FragmentItemListBinding
 import com.unaj.maestrodetalleresponsive.databinding.ItemListContentBinding
 
-/**
- * A Fragment representing a list of Pings. This fragment
- * has different presentations for handset and larger screen devices. On
- * handsets, the fragment presents a list of items, which when touched,
- * lead to a {@link ItemDetailFragment} representing
- * item details. On larger screens, the Navigation controller presents the list of items and
- * item details side-by-side using two vertical panes.
- */
-
 class ItemListFragment : Fragment() {
 
-    /**
-     * Method to intercept global key events in the
-     * item list fragment to trigger keyboard shortcuts
-     * Currently provides a toast when Ctrl + Z and Ctrl + F
-     * are triggered
-     */
     private val unhandledKeyEventListenerCompat =
         ViewCompat.OnUnhandledKeyEventListenerCompat { v, event ->
             if (event.keyCode == KeyEvent.KEYCODE_Z && event.isCtrlPressed) {
@@ -57,8 +42,6 @@ class ItemListFragment : Fragment() {
 
     private var _binding: FragmentItemListBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -78,8 +61,6 @@ class ItemListFragment : Fragment() {
 
         val recyclerView: RecyclerView = binding.itemList
 
-        // Leaving this not using view binding as it relies on if the view is visible the current
-        // layout configuration (layout, layout-sw600dp)
         val itemDetailFragmentContainer: View? = view.findViewById(R.id.item_detail_nav_container)
 
         setupRecyclerView(recyclerView, itemDetailFragmentContainer)
@@ -131,11 +112,6 @@ class ItemListFragment : Fragment() {
                     }
                 }
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    /**
-                     * Context click listener to handle Right click events
-                     * from mice and trackpad input to provide a more native
-                     * experience on larger screen devices
-                     */
                     setOnContextClickListener { v ->
                         val item = v.tag as PlaceholderContent.PlaceholderItem
                         Toast.makeText(
@@ -148,8 +124,6 @@ class ItemListFragment : Fragment() {
                 }
 
                 setOnLongClickListener { v ->
-                    // Setting the item id as the clip data so that the drop target is able to
-                    // identify the id of the content
                     val clipItem = ClipData.Item(item.id)
                     val dragData = ClipData(
                         v.tag as? CharSequence,

@@ -9,8 +9,6 @@ object PlaceholderContent {
         PlaceholderItem("1", "Amazon", "https://www.amazon.com"),
         PlaceholderItem("2", "Google", "https://www.google.com"),
         PlaceholderItem("3", "Android", "https://www.android.com"),
-        PlaceholderItem("4", "UNAJ", "https://www.unaj.edu.ar"),
-        PlaceholderItem("5", "Wikipedia", "https://www.wikipedia.org")
     )
 
     /**
